@@ -1,0 +1,26 @@
+service: go-provided-al2
+
+# Support for arm64 architecture in this release of the serverless framework
+frameworkVersion: "^2.61.0"
+
+provider:
+  name: aws
+  runtime: provided.al2
+  architecture: arm64
+  lambdaHashingVersion: 20201221
+  region: eu-west-2
+
+# Our functions will be packaged up externally
+# See https://www.serverless.com/framework/docs/providers/aws/guide/packaging#packaging-functions-separately
+package:
+  individually: true
+
+functions:
+  hello:
+    handler: bootstrap
+    package:
+      artifact: bin/hello.zip
+    events:
+      - httpApi:
+          path: /hello
+          method: get
