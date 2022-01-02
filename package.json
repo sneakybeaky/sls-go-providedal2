@@ -1,0 +1,13 @@
+{
+    "devDependencies": {
+        "serverless": "^2.70.0"
+    },
+    "name": "go-provided-al2-demo",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "sls": "serverless"
+    },
+    "author": "Jon Barber",
+    "description": "Packaging go lambdas for the provided.al2 runtime"
+}
